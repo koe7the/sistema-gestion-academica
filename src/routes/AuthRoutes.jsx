@@ -1,6 +1,5 @@
 import React from "react";
 //VISTAS
-import Registro from "../views/Auth/Registro";
 import Login from "../views/Auth/Login";
 import Welcome from "../views/Welcome/Welcome";
 //LIBRERIAS
@@ -12,7 +11,6 @@ const AuthRoutes = () => {
       <Switch>
         <Route exact path="/" component={Welcome} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/registro" component={Registro} />
       </Switch>
     </div>
   );

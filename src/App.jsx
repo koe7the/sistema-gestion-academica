@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.scss";
 //HELPERS
 import Auth from "./helpers/Auth";
 //ROUTER

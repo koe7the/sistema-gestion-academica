@@ -1,0 +1,92 @@
+@import "../../App.scss";
+
+nav {
+  margin: 0;
+  padding: 0;
+  height: 4rem;
+  display: flex;
+  background-color: $marble;
+  border-bottom: 2px solid $text-color;
+  font-weight: 600;
+}
+
+.nav-index {
+  margin: 0 0 0 0;
+  padding: 0.8rem;
+  border-right: 2px solid $text-color;
+  transition: all 0.4s;
+  &:hover {
+    background-color: $soft-blue;
+    text-decoration: none;
+  }
+
+  .nav-indexIcon {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .nav-indexTitle {
+    margin: 0 0 0 0.5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+}
+
+.nav-itemList {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  width: 75%;
+
+  .nav-item {
+    margin: 0;
+    padding: 0.7rem;
+    align-self: center;
+
+    transition: all 0.4s;
+    &:hover {
+      background-color: $soft-blue;
+      border-radius: 0.2rem;
+    }
+
+    .nav-itemLink {
+      padding: 0;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .nav-itemIcon {
+      //
+    }
+
+    .nav-itemTitle {
+      //
+    }
+  }
+}
+
+#menuIcon {
+  display: none;
+  cursor: pointer;
+  transition: all 0.4s;
+  &:hover {
+    background-color: $soft-blue;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  nav {
+    justify-content: space-between;
+  }
+  .nav-itemList {
+    display: none;
+  }
+  #menuIcon {
+    display: inline-block;
+    height: inherit;
+    width: 60px;
+  }
+}

@@ -1,31 +1,27 @@
 import React from "react";
+import "./Welcome.scss";
 //COMPONENTES
 import HomeBanner from "../../components/HomeBanner/HomeBanner";
 //LIBRERIAS
-import { useHistory } from "react-router-dom";
+//HELPERS
+import Routing from "../../helpers/Routing";
 
 const Welcome = () => {
-  const history = useHistory();
+  const { visitPage } = Routing();
 
   return (
     <div>
       <HomeBanner />
-      <p>cosas</p>
-      <span
-        onClick={() => {
-          history.push("/registro");
-        }}
-      >
-        ir a registro
-      </span>
-      <br />
-      <span
-        onClick={() => {
-          history.push("/login");
-        }}
-      >
-        ir a login
-      </span>
+      <div className="welcome-optionsDiv">
+        <div
+          onClick={() => {
+            visitPage("/login");
+          }}
+          className="welcome-option"
+        >
+          <span className="option">ir a login</span>
+        </div>
+      </div>
     </div>
   );
 };

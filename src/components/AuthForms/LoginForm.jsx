@@ -1,29 +1,18 @@
 import React from "react";
-import "./LoginForm.css";
-
-import { useHistory } from "react-router-dom";
+import "./LoginForm.scss";
 
 const LoginForm = () => {
-  const history = useHistory();
+  const logear = (e) => {
+    e.preventDefault();
+    localStorage.setItem("auth-token", "admin");
+  };
 
   return (
     <div className="loginFormComponent">
       <span className="loginFormTitle">Iniciar sesion</span>
 
-      <div className="signUpDiv">
-        <h5>No cuentas con un usuario?</h5>
-        <span
-          id="signUpRedirect"
-          onClick={() => {
-            history.push("/registro");
-          }}
-        >
-          Registrar usuario
-        </span>
-      </div>
-
-      <form className="loginForm">
-        <div className="inputsContainer">
+      <form onSubmit={logear} className="loginForm">
+        <div className="loginForm-inputsContainer">
           <div className="loginFormInput">
             <label htmlFor="">Numero de identificación</label>
             <input type="text" name="" />

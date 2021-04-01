@@ -1,0 +1,130 @@
+@import "../../App.scss";
+/**
+ * Componente del formulario de login: <div>
+ */
+.loginFormComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin: 0 0 1rem 0;
+
+  /**
+   * Titulo del formulario: <h5>
+   */
+  .loginFormTitle {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 0 0;
+  }
+}
+
+/**
+ * Formulario: <form>
+ */
+.loginForm {
+  border-radius: 0.2rem;
+  box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 0.5);
+  background-color: var(--soft-white);
+  justify-content: space-between;
+  margin: 2rem 0 0 0;
+  padding: 1.2rem 0 1rem 0;
+  min-width: 650px;
+
+  /**
+   * Contenedor de los inputs, usa display flex para que se ordenen: <div>
+   */
+  .loginForm-inputsContainer {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  button {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 600;
+    color: $text-color;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    margin: 1rem auto;
+    background: $light-orange;
+    border: 2px solid $orange-border;
+    border-radius: 0.75em;
+    transform-style: preserve-3d;
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+      background 150ms cubic-bezier(0, 0, 0.58, 1);
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $soft-orange;
+      border-radius: inherit;
+      box-shadow: 0 0 0 2px $orange-border, 0 0 0 0 $orange-border;
+      transform: translate3d(0, 0.75em, -1em);
+      transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+        box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+    }
+    &:hover {
+      background: $light-orange;
+      transform: translate(0, 0.25em);
+      &::before {
+        box-shadow: 0 0 0 2px $orange-border, 0 0 0 0 $orange-border;
+        transform: translate3d(0, 0.5em, -1em);
+      }
+    }
+    &:active {
+      background: $light-orange;
+      transform: translate(0em, 0.75em);
+      &::before {
+        box-shadow: 0 0 0 2px $orange-border, 0 0 $orange-border;
+        transform: translate3d(0, 0, -1em);
+      }
+    }
+  }
+}
+
+/**
+ * Input del formulario: <div>
+ */
+
+.loginFormInput {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 1rem 0 0.6rem 0;
+  max-width: 50%;
+
+  label {
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  input {
+    outline: none;
+    border: 2px solid $dark-blue;
+    border-radius: 0.6rem;
+    padding: 0.3rem 0 0.3rem 0.5rem;
+    transition: all 0.4s;
+
+    &:focus {
+      border: 2px solid $dark-orange;
+      outline: none;
+    }
+    &:hover {
+      outline: none;
+      border: 2px solid $dark-orange;
+    }
+  }
+}

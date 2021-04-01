@@ -1,0 +1,32 @@
+:root {
+  --app-background: #f8f2f1;
+  --soft-white: #f5f6fa;
+  --marble: #ede9e8;
+  --dark-blue: #102542;
+  --dark-chocolate: #130b02;
+  --hard-orange: #f87060;
+}
+$background: #f8f3f2;
+$white: #f5f6fa;
+$marble: #e7e4e3;
+$text-color: #130b02;
+$light-blue: #cedcff;
+$soft-blue: #a8c2ff;
+$dark-blue: #102542;
+$blue-border: #4b7bec;
+$light-orange: #ffb8b0;
+$soft-orange: #ff988c;
+$orange-border: #ff7465;
+$dark-orange: #ff5c4a;
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: $text-color;
+  padding: 0;
+  margin: 0;
+}
+
+.contentBody {
+  background-color: $background;
+  min-height: 100vh;
+}

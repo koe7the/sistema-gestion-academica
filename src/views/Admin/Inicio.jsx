@@ -1,6 +1,6 @@
 import React from "react";
 //LIBRERIAS
-import { Jumbotron, Button } from "react-bootstrap";
+
 //COMPONENTES
 
 const Inicio = () => {
