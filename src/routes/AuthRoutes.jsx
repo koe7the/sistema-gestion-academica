@@ -1,16 +1,18 @@
 import React from "react";
+//VISTAS
+import Registro from "../views/Auth/Registro";
+import Login from "../views/Auth/Login";
+import Welcome from "../views/Welcome/Welcome";
 //LIBRERIAS
 import { Route, Switch } from "react-router-dom";
-//VISTAS
-import Registro from "../views/Registro";
-import Login from "../views/Login";
 
 const AuthRoutes = () => {
   return (
-    <div>
+    <div className="contentBody">
       <Switch>
-        <Route exact path="/" component={Registro} />
+        <Route exact path="/" component={Welcome} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/registro" component={Registro} />
       </Switch>
     </div>
   );

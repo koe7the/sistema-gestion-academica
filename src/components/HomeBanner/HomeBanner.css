@@ -1,0 +1,29 @@
+/**
+ * BANNER STYLES
+ */
+
+.homeBanner {
+  background-color: var(--marble);
+  border-bottom: 2px solid var(--dark-chocolate);
+  padding: 1.5rem 0 1rem 0;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.homeBannerLogo {
+  border-radius: 0.4rem;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.homeBannerLogo:hover {
+  transform: translateX(5px);
+}
+
+.homeBannerTitle {
+  margin: 1rem 0;
+  font-weight: 600;
+}

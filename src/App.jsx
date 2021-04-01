@@ -1,41 +1,23 @@
-import React from "react";
-import "./styles/App.css";
+import React, { useEffect, useContext } from "react";
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-//RUTAS PARA LOS ROLES
-import AdminRoutes from "./routes/AdminRoutes";
-import UserRoutes from "./routes/UserRoutes";
-import AuthRoutes from "./routes/AuthRoutes";
-//LIBRERIAS
-import { BrowserRouter } from "react-router-dom";
-//HOOK
-import useCredenciales from "./hooks/useCredenciales";
+//HELPERS
+import Auth from "./helpers/Auth";
+//ROUTER
+import Router from "./routes/Router";
+//CONTEXTO
+import { Context } from "./AppContext";
 
 const App = () => {
-  /* este hook retorna las credenciales del usuario alojado en el localstorage */
-  const { credenciales } = useCredenciales();
+  const { contextState, setContextState } = useContext(Context);
+  const authData = Auth().getToken();
 
-  /**
-   * La idea para el routing por roles, es que las rutas login y signup siempre van a
-   * estar establecidas, pero el componente de app verificara siempre que es renderizado
-   * si hay credenciales y de que tipo son, para entonces habilitar las rutas segun las
-   * credenciales.
-   *
-   *
-   * las credenciales seran guardadas en el localstorage.
-   */
+  useEffect(() => {
+    if (!authData) setContextState({ loggStatus: false });
+    else setContextState({ loggStatus: "admin" });
+  }, []);
 
-  return (
-    <BrowserRouter>
-      {/* Esta sentencia valida el tema de los switch de las rutas TODO: arreglar sentencias*/}
-      {!credenciales ? (
-        <AuthRoutes />
-      ) : credenciales.rol === "admin" ? (
-        <AdminRoutes />
-      ) : (
-        <UserRoutes />
-      )}
-    </BrowserRouter>
-  );
+  return <Router loggStatus={contextState.loggStatus} />;
 };
 
 export default App;

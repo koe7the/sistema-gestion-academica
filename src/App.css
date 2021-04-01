@@ -1,0 +1,27 @@
+@font-face {
+  font-family: roboto;
+  src: url("./assets/Roboto/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --app-background: #f8f2f1;
+  --soft-white: #f5f6fa;
+  --marble: #ede9e8;
+  --dark-blue: #102542;
+  --dark-chocolate: #130b02;
+  --hard-orange: #f87060;
+}
+
+* {
+  font-family: roboto;
+  margin: 0;
+  padding: 0;
+  color: var(--dark-chocolate);
+}
+
+.contentBody {
+  background-color: var(--app-background);
+  min-height: 100vh;
+}
